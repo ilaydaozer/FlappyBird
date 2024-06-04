@@ -13,11 +13,11 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('Flappy Bird')
 
 
-#define game variables
+
 ground_scroll = 0
 scroll_speed = 4
 
-#load images
+
 bg = pygame.image.load('img/bg.png')
 ground_img = pygame.image.load('img/ground.png')
 
@@ -37,7 +37,7 @@ class Bird(pygame.sprite.Sprite):
 
 	def update(self):
 
-		#handle the animation
+		
 		self.counter += 1
 		flap_cooldown = 5
 
@@ -61,13 +61,13 @@ while run:
 
 	clock.tick(fps)
 
-	#draw background
+	
 	screen.blit(bg, (0,0))
 
 	bird_group.draw(screen)
 	bird_group.update()
 
-	#draw and scroll the ground
+	
 	screen.blit(ground_img, (ground_scroll, 768))
 	ground_scroll -= scroll_speed
 	if abs(ground_scroll) > 35:
